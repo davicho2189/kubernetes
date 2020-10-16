@@ -9,8 +9,8 @@ resource "azurerm_resource_group" "tfexample" {
 
 resource "azurerm_kubernetes_cluster" "" {
   name                = "${var.prefix}-k8s"
-  location            = azurerm_resource_group..location
-  resource_group_name = azurerm_resource_group..name
+  location            = azurerm_resource_group.tfexample.location
+  resource_group_name = azurerm_resource_group.tfexample.name
   dns_prefix          = "${var.prefix}-k8s"
 
   default_node_pool {
