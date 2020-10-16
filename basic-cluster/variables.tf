@@ -1,7 +1,8 @@
 variable "prefix" {
-  description = "A prefix used for all resources in this example"
+  description = "Un prefijo utilizado para todos los recursos en este ejemplo"
 }
 
 variable "location" {
-  description = "The Azure Region in which all resources in this example should be provisioned"
+  description = "La región de Azure en la que se deben aprovisionar todos los recursos de este ejemplo"
+   default = "Central US"
 }
