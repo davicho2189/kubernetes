@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "tfexample" {
   location = var.location
 }
 
-resource "azurerm_kubernetes_cluster" "" {
+resource "azurerm_kubernetes_cluster" "tfexample" {
   name                = "${var.prefix}-k8s"
   location            = azurerm_resource_group.tfexample.location
   resource_group_name = azurerm_resource_group.tfexample.name
