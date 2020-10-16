@@ -2,15 +2,15 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "tf_example" {
+resource "azurerm_resource_group" "tfexample" {
   name     = "${var.prefix}-k8s-resources"
   location = var.location
 }
 
-resource "azurerm_kubernetes_cluster" "tf_example" {
+resource "azurerm_kubernetes_cluster" "" {
   name                = "${var.prefix}-k8s"
-  location            = azurerm_resource_group.tf_example.location
-  resource_group_name = azurerm_resource_group.tf_example.name
+  location            = azurerm_resource_group..location
+  resource_group_name = azurerm_resource_group..name
   dns_prefix          = "${var.prefix}-k8s"
 
   default_node_pool {
